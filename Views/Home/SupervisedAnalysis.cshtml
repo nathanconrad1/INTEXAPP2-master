@@ -1,0 +1,133 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Burial Wrapping Predictions";
+    ViewData["Subheading"] = "Enter Mummy Data Below to Predict Completeness of Wrapping ";
+    ViewData["Header"] = "Burial Wrapping Predictions";
+    ViewData["Img"] = "/img/Mummy.jpg";
+}
+
+@model INTEXAPP2.Models.ViewModels.SupervisedView
+<h1>Supervised Analysis</h1>
+
+@*<h2>A page that allows the user to enter osteology and/or burial information to predict (based on your trained model) the sex of the burial (see information re: IS 455 requirements)</h2>
+*@
+
+@*# # burialCols = ['depth', 'length', 'headdirection', 'squarenorthsouth', 'northsouth', 'squareeastwest', 'eastwest', 'sex', 'ageatdeath', 'facebundles', 'wrapping']
+# # yarnCols = ['material', 'thickness', 'ply', 'count', 'direction']*@
+
+<div class="container">
+    <div class="row">
+
+
+
+<div class="d-xl-inline-flex col-6">
+    <form class="form" method="post">
+    <label class="col-form-label" asp-for="head">Head Direction</label>
+    <select class="form-select" asp-for="head">
+        <option value=""></option>
+        <option value="W">West</option>
+        <option value="E">East</option>
+    </select>
+
+    <label class="col-form-label" asp-for="face">Face Bundles</label>
+    <select class="form-select" asp-for="face">
+        <option value=""></option>
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+    </select>
+
+@*    <label asp-for="material">Material</label>
+    <select asp-for="material">
+        <option value=""></option>
+        <option value="Linen">Linen</option>
+        <option value="Wool">Wool</option>
+    </select><br />
+
+    <label asp-for="thickness">Thickness</label>
+    <select asp-for="thickness">
+        <option value=""></option>
+        <option value="VeryFine">Very Fine</option>
+        <option value="Fine">Fine</option>
+        <option value="FineMedium">FineMedium</option>
+        <option value="Medium">Medium</option>
+        <option value="MediumCoarse">Medium Coarse</option>
+        <option value="Coarse">Coarse</option>*@
+    @*</select><br />*@
+
+@*    <label asp-for="direction">Direction</label>
+    <select asp-for="direction">
+        <option value=""></option>
+        <option value="Z">Z</option>
+        <option value="S">S</option>
+        <option value="S-twist">S Twist</option>
+        <option value="Z-twist">Z Twist</option>
+        <option value="S/Z">S/Z</option>
+        <option value="S-twist/Z-twist">S Twist/Z Twist</option>
+        <option value="S/Z-twist">S/Z Twist</option>
+        <option value="Z/S-twist">Z/S Twist</option>
+    </select><br />*@
+
+@*    <label asp-for="ply">Ply</label>
+    <select asp-for="ply">
+        <option value=""></option>
+        <option value="Single">Single</option>
+        <option value="Multiple">Multiple</option>
+    </select><br />*@
+
+    <label class="col-form-label" asp-for="sex">Sex</label>
+    <select class="form-select" asp-for="sex">
+        <option value=""></option>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+    </select>
+
+    <label class="col-form-label" asp-for="eastwest">East West</label>
+    <select class="form-select" asp-for="eastwest">
+        <option value=""></option>
+        <option value="E">East</option>
+        <option value="W">West</option>
+    </select>
+
+    <label class="col-form-label" asp-for="age">Age at Death</label>
+    <select class="form-select" asp-for="age">
+        <option value=""></option>
+        <option value="A">Adult</option>
+        <option value="C">Child</option>
+        <option value="I">Infant</option>
+        <option value="N">New Born</option>
+    </select>
+
+    <label class="col-form-label" asp-for="depth">Depth</label>
+    <input class="input-group" type="number" asp-for="depth" />
+    
+    <label class="col-form-label" asp-for="length">Length</label>
+    <input class="input-group" type="number" asp-for="length" />
+    
+    <label class="col-form-label" asp-for="squarenorthsouth">Square (North South)</label>
+    <input class="input-group" type="number" asp-for="squarenorthsouth" />
+    
+    <label class="col-form-label" asp-for="squareeastwest">Square (East West)</label>
+    <input class="input-group" type="number" asp-for="squareeastwest" /><br />
+    
+@*    <label asp-for="count">Count</label>
+    <input type="number" asp-for="count" /><br />*@
+
+    <button class="btn btn-primary" type="submit">Predict Wrapping</button>
+    </form>
+</div>
+
+        <div class="col-6">
+        <h1>Predicted Value: @ViewBag.j</h1><br />
+            <p>*B = Bones and/or only partial remnants of wrapping remains</p>
+            <p>*H = Partial wrapping remain</p>
+            <p>*W = Full or nearly full wrapping remains</p>
+        </div>
+    
+
+    </div>
+</div>
+
+    
+

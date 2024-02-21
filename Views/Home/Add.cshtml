@@ -1,0 +1,152 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Add Record";
+    ViewData["Subheading"] = "";
+    ViewData["Header"] = "Add a record";
+    ViewData["Img"] = "/img/add-bg.jpg";
+}
+
+@model Burialmain
+<form asp-action="Add" method="post">
+
+<input type="hidden" asp-for="Id" value="@ViewBag.id" />
+<!--Input for Squarenorthsouth -->
+<label asp-for="Squarenorthsouth">Square North South:</label>
+<input asp-for="Squarenorthsouth" required>
+<br>
+<label asp-for="Squareeastwest">Square East West:</label>
+<input asp-for="Squareeastwest" required>
+<br>
+<!--Input for Northsout -->
+<label asp-for="Northsouth">North South:</label>
+<input asp-for="Northsouth" required>
+<br>
+<!--Input for Burial Number -->
+<label asp-for="Burialnumber">Burial Number:</label>
+<input asp-for="Burialnumber" required>
+<br>
+<!--Input for Eastwest -->
+<label asp-for="Eastwest">East West:</label>
+<input asp-for="Eastwest" required>
+<br>
+<!--Input for Headdirection -->
+<label asp-for="Headdirection">Head Direction:</label>
+<input asp-for="Headdirection">
+<br>
+<!--Input for Southtohead -->
+<label asp-for="Southtohead">South To Head:</label>
+<input asp-for="Southtohead">
+<br>
+<!--Input for Westtohead -->
+<label asp-for="Westtohead">West To Head:</label>
+<input asp-for="Westtohead">
+<br>
+<!--Input for Southtofeet -->
+<label asp-for="Southtofeet">South To Feet:</label>
+<input asp-for="Southtofeet">
+<br>
+<!--Input for Westtofeet -->
+<label asp-for="Westtofeet">West To Feet:</label>
+<input asp-for="Westtofeet">
+<br>
+<!--Input for Sex -->
+<label asp-for="Sex">Sex:</label>
+<input asp-for="Sex">
+<br>
+<!--Input for Depth -->
+<label asp-for="Depth">Burial Depth:</label>
+<input asp-for="Depth">
+<br>
+<!--Input for Adultsubadult -->
+<label asp-for="Adultsubadult">Adult/Subadult:</label>
+<input asp-for="Adultsubadult">
+<br>
+<!--Input for Facebundles -->
+<label asp-for="Facebundles">Face Bundles:</label>
+<input asp-for="Facebundles">
+<br>
+<!--Input for Preservation -->
+<label asp-for="Preservation">Preservation:</label>
+<input asp-for="Preservation">
+<br>
+<!--Input for Fieldbookpage -->
+<label asp-for="Fieldbookpage">Field Book Page:</label>
+<input asp-for="Fieldbookpage">
+<br>
+<!--Input for Squareeastwest -->
+<!--Input for Goods -->
+<label asp-for="Goods">Goods:</label>
+<input asp-for="Goods">
+<br>
+<!--Input for Text -->
+<label asp-for="Text">Text:</label>
+<input asp-for="Text">
+<br>
+<!--Input for Wrapping -->
+<label asp-for="Wrapping">Wrapping:</label>
+<input asp-for="Wrapping">
+<br>
+<!--Input for Haircolor -->
+<label asp-for="Haircolor">Hair Color:</label>
+<input asp-for="Haircolor">
+<br>
+<!--Input for Samplescollected -->
+<label asp-for="Samplescollected">Samples Collected:</label>
+<input asp-for="Samplescollected">
+<br>
+<!--Input for Area -->
+<label asp-for="Area">Area:</label>
+<input asp-for="Area">
+<br>
+<!--Input for Burialid -->
+<label asp-for="Burialid">Burial ID:</label>
+<input asp-for="Burialid">
+<br>
+<!--Input for Length -->
+<label asp-for="Length">Length:</label>
+<input asp-for="Length">
+<br>
+<!--Input for Dataexpertinitials -->
+<label asp-for="Dataexpertinitials">Data Expert Initials:</label>
+<input asp-for="Dataexpertinitials">
+<br>
+<!--Input for Ageatdeath -->
+<label asp-for="Ageatdeath">Age At Death:</label>
+<input asp-for="Ageatdeath">
+<br>
+<!--Input for Excavationrecorder -->
+<label asp-for="Excavationrecorder">Excavation Recorder:</label>
+<input asp-for="Excavationrecorder">
+<br>
+<!--Input for Photos -->
+<label asp-for="Photos">Photos:</label>
+<input asp-for="Photos">
+<br>
+<!--Input for Hair -->
+<label asp-for="Hair">Hair:</label>
+<input asp-for="Hair">
+<br>
+<!--Input for Burialmaterials -->
+<label asp-for="Burialmaterials">Burial Materials:</label>
+<input asp-for="Burialmaterials">
+<br>
+<!--Input for Dateofexcavation -->
+<label asp-for="Dateofexcavation">Date Of Excavation:</label>
+<input asp-for="Dateofexcavation">
+<br>
+<!--Input for Fieldbookexcavationyear -->
+<label asp-for="Fieldbookexcavationyear">Field Book Excavation Year:</label>
+<input asp-for="Fieldbookexcavationyear">
+<br>
+<!--Input for Clusternumber -->
+<label asp-for="Clusternumber">Cluster Number:</label>
+<input asp-for="Clusternumber">
+<br>
+<!--Input for Shaftnumber -->
+<label asp-for="Shaftnumber">Shaft Number:</label>
+<input asp-for="Shaftnumber">
+<br>
+<input type="submit" value="Save">
+</form>

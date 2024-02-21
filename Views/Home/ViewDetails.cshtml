@@ -1,0 +1,75 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Details For "+Model.Burial.Id.ToString();
+    ViewData["Subheading"] = "";
+    ViewData["Header"] = "Details For "+Model.Burial.Id.ToString();
+    ViewData["Img"] = "/img/Mummy.jpg";
+}
+@model DetailsViewModel
+
+<!--Added shadows to each of the cards and increased the gap-->
+<div class="card card-outline-primary m-3 p-1 shadow-lg">
+    <div class="bg-faded p-1">
+        <h4>
+            @Model.Burial.Id
+            <!--Make price the little blue bubble-->
+        </h4>
+        <div class="container">
+            <div class="card-text p-1">Sex: @(Model.Burial.Squarenorthsouth == null || Model.Burial.Squarenorthsouth == "" ? "Unknown" : Model.Burial.Squarenorthsouth)</div>
+            <div class="card-text p-1">Head Direction: @(Model.Burial.Headdirection == null || Model.Burial.Headdirection == "" ? "Unknown" : Model.Burial.Headdirection)</div>
+            <div class="card-text p-1">Sex: @(Model.Burial.Sex == null || Model.Burial.Sex == "" ? "Unknown" : Model.Burial.Sex)</div>
+            <div class="card-text p-1">Northsouth: @(Model.Burial.Northsouth == null || Model.Burial.Northsouth == "" ? "Unknown" : Model.Burial.Northsouth)</div>
+            <div class="card-text p-1">Burial Depth: @(Model.Burial.Depth == null || Model.Burial.Depth == "" ? "Unknown" : Model.Burial.Depth)</div>
+            <div class="card-text p-1">East West: @(Model.Burial.Eastwest == null || Model.Burial.Eastwest == "" ? "Unknown" : Model.Burial.Eastwest)</div>
+            <div class="card-text p-1">Adult/SubAdult: @(Model.Burial.Adultsubadult == null || Model.Burial.Adultsubadult == "" ? "Unknown" : Model.Burial.Adultsubadult)</div>
+            <div class="card-text p-1">Face Bundles: @(Model.Burial.Facebundles == null || Model.Burial.Facebundles == "" ? "Unknown" : Model.Burial.Facebundles)</div>
+            <div class="card-text p-1">South To Head: @(Model.Burial.Southtohead == null || Model.Burial.Southtohead == "" ? "Unknown" : Model.Burial.Southtohead)</div>
+            <div class="card-text p-1">Preservation: @(Model.Burial.Preservation == null || Model.Burial.Preservation == "" ? "Unknown" : Model.Burial.Preservation)</div>
+            <div class="card-text p-1">Field Book Page: @(Model.Burial.Fieldbookpage == null || Model.Burial.Fieldbookpage == "" ? "Unknown" : Model.Burial.Fieldbookpage)</div>
+            <div class="card-text p-1">Square East West: @(Model.Burial.Squareeastwest == null || Model.Burial.Squareeastwest == "" ? "Unknown" : Model.Burial.Squareeastwest)</div>
+            <div class="card-text p-1">Goods: @(Model.Burial.Goods == null || Model.Burial.Goods == "" ? "Unknown" : Model.Burial.Goods)</div>
+            <div class="card-text p-1">Text: @(Model.Burial.Text == null || Model.Burial.Text == "" ? "Unknown" : Model.Burial.Text)</div>
+            <div class="card-text p-1">Wrapping: @(Model.Burial.Wrapping == null || Model.Burial.Wrapping == "" ? "Unknown" : Model.Burial.Wrapping)</div>
+            <div class="card-text p-1">Hair Color: @(Model.Burial.Haircolor == null || Model.Burial.Haircolor == "" ? "Unknown" : Model.Burial.Haircolor)</div>
+            <div class="card-text p-1">West To Head: @(Model.Burial.Westtohead == null || Model.Burial.Westtohead == "" ? "Unknown" : Model.Burial.Westtohead)</div>
+            <div class="card-text p-1">Samples Collected: @(Model.Burial.Samplescollected == null || Model.Burial.Samplescollected == "" ? "Unknown" : Model.Burial.Samplescollected)</div>
+            <div class="card-text p-1">Area: @(Model.Burial.Area == null || Model.Burial.Area == "" ? "Unknown" : Model.Burial.Area)</div>
+            <div class="card-text p-1">Burial ID: @(Model.Burial.Burialid == null ? "Unknown" : Model.Burial.Burialid)</div>
+            <div class="card-text p-1">Length: @(Model.Burial.Length == null || Model.Burial.Length == "" ? "Unknown" : Model.Burial.Length)</div>
+            <div class="card-text p-1">Burial Number: @(Model.Burial.Burialnumber == null || Model.Burial.Burialnumber == "" ? "Unknown" : Model.Burial.Burialnumber)</div>
+            <div class="card-text p-1">Data Expert Initials: @(Model.Burial.Dataexpertinitials == null || Model.Burial.Dataexpertinitials == "" ? "Unknown" : Model.Burial.Dataexpertinitials)</div>
+            <div class="card-text p-1">West To Feet: @(Model.Burial.Westtofeet == null || Model.Burial.Westtofeet == "" ? "Unknown" : Model.Burial.Westtofeet)</div>
+            <div class="card-text p-1">Age At Death: @(Model.Burial.Ageatdeath == null || Model.Burial.Ageatdeath == "" ? "Unknown" : Model.Burial.Ageatdeath)</div>
+            <div class="card-text p-1">South To Feet: @(Model.Burial.Southtofeet == null || Model.Burial.Southtofeet == "" ? "Unknown" : Model.Burial.Southtofeet)</div>
+            <div class="card-text p-1">Excavation Recorder: @(Model.Burial.Excavationrecorder == null || Model.Burial.Excavationrecorder == "" ? "Unknown" : Model.Burial.Excavationrecorder)</div>
+            <div class="card-text p-1">Photos: @(Model.Burial.Photos == null || Model.Burial.Photos == "" ? "Unknown" : Model.Burial.Photos)</div>
+            <div class="card-text p-1">Hair: @(Model.Burial.Hair == null || Model.Burial.Hair == "" ? "Unknown" : Model.Burial.Hair)</div>
+            <div class="card-text p-1">Date Of Excavation: @(Model.Burial.Dateofexcavation == null ? "Unknown" : Model.Burial.Dateofexcavation)</div>
+            <div class="card-text p-1">Field Book Excavation Year: @(Model.Burial.Fieldbookexcavationyear == null || Model.Burial.Fieldbookexcavationyear == "" ? "Unknown" : Model.Burial.Fieldbookexcavationyear)</div>
+            <div class="card-text p-1">Cluster Number: @(Model.Burial.Clusternumber == null || Model.Burial.Clusternumber == "" ? "Unknown" : Model.Burial.Clusternumber)</div>
+            
+        </div>
+    </div>
+    <!--List out everything else-->
+    @*    <div class="card-text p-1">Author: @Model.Author.</div>
+    <div class="card-text p-1">Publisher: @Model.Publisher.</div>
+    <div class="card-text p-1">ISBN: @Model.Isbn</div>
+    <div class="card-text p-1">Classification: @Model.Classification</div>
+    <div class="card-text p-1">Category: @Model.Category</div>
+    <div class="card-text p-1">Page Count: @Model.PageCount</div>
+    <!--Allow the user to return to the page they left from. Also send over the book id-->
+    <form method="post" asp-page="/ShoppingCart">
+    <input type="hidden" asp-for="@Model.BookId" />
+    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+    <span class="card-text">
+    <button type="submit" class="btn btn-success btn-sm float-end">Add To Cart</button>
+    </span>
+    </form>*@
+</div>

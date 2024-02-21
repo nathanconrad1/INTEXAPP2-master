@@ -1,0 +1,72 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model SummaryView
+
+<!--Added shadows to each of the cards and increased the gap-->
+
+<div class="card card-outline-primary m-3 p-1 shadow-lg">
+    <div class="bg-faded p-1">
+        <h4>
+            @Model.Id
+            <!--Make price the little blue bubble-->
+            <span class="badge badge-pill badge-primary" style="float:right">
+                <small>
+                    <partial name="EditPartial" model="Model" /> | 
+                    <partial name="DeletePartial" model="Model"/>
+                </small>
+            </span>
+        </h4>
+        <a asp-controller="Home" asp-action="ViewDetails" asp-route-id="@Model.Id">
+        <div class="container rounded-3" >
+            
+            
+            <div class="card-text p-1 rounded-3">Sex: @(Model.sex==null||Model.sex=="" ? "Unknown": Model.sex)</div>
+            <div class="card-text p-1 rounded-3">Burial Depth: @(Model.depth ?? "Unknown").</div>
+            <div class="card-text p-1 rounded-3">Structure: @(Model.stature == null ?"Unknown":Model.stature)</div>
+            <div class="card-text p-1 rounded-3">Age At Death: @(Model.age ?? "Unknown")</div>
+            <div class="card-text p-1 rounded-3">Head Direction: @(Model.headdirection ?? "Unknown")</div>
+            <div class="card-text p-1 rounded-3">Hair Color: @(Model.haircolor ?? "Unknown")</div>
+
+            @if (Model.TextileList.Count() > 0)
+            {
+                <div class="row">
+                    <div class="col text-center">
+                        <h5>
+                            Textiles
+                        </h5>
+                    </div>
+                </div>
+
+                foreach (Textiledetail c in Model.TextileList)
+                {
+                    <div class="row">
+                        <div class="col">Color: @c.Color</div>
+                        <div class="col">Structure: @c.TextileStructure</div>
+                        <div class="col">Function: @c.TextileFunction</div>
+                    </div>
+                }
+            }
+
+
+        </div>
+        </a>
+    </div>
+    <!--List out everything else-->
+@*    <div class="card-text p-1">Author: @Model.Author.</div>
+    <div class="card-text p-1">Publisher: @Model.Publisher.</div>
+    <div class="card-text p-1">ISBN: @Model.Isbn</div>
+    <div class="card-text p-1">Classification: @Model.Classification</div>
+    <div class="card-text p-1">Category: @Model.Category</div>
+    <div class="card-text p-1">Page Count: @Model.PageCount</div>
+    <!--Allow the user to return to the page they left from. Also send over the book id-->
+    <form method="post" asp-page="/ShoppingCart">
+        <input type="hidden" asp-for="@Model.BookId" />
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+        <span class="card-text">
+            <button type="submit" class="btn btn-success btn-sm float-end">Add To Cart</button>
+        </span>
+    </form>*@
+</div>

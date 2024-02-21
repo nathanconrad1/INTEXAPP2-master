@@ -1,0 +1,87 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Research Analysis";
+    ViewData["Subheading"] = "Below you will find images of our findings using Machine Learning Models";
+    ViewData["Header"] = "Research Findings";
+    ViewData["Img"] = "/img/Mummy.jpg";
+}
+
+
+<h4>Have the burials changed over time?</h4>
+<div class="row">
+    <p class="col-md-4">
+        The research team has a working hypothesis that the burial practices in the 1,000-year-old cemetery could have changed over time.  
+        The earliest burials have been found at a depth around 3-4 meters, with the more recent burials found much closer to the surface.  
+        We used KMeans cluster analysis in python to explore the data and discovere whether the characteristics of burials changed across 
+        different depths.
+    </p>
+    <div class="col-md-8">
+        <img src="~/img/charts/silhouette_score.png" class="img-responsive" style="max-width:100%; height:auto;" />
+        <img src="~/img/charts/ss_score.png" class="img-responsive" style="max-width:100%; height:auto;" />
+    </div>
+</div>
+<div class="row">
+    <p class="col-md-4">
+        In order to determine how many clusters to include in our KMeans model we used several metrics to test various cluster amounts.  
+        We took the average of the Silhouette score, calinski-harabasz score, and SS score to get an approximate optimal cluster amount 
+        of nine clusters.
+    </p>
+    <div class="col-md-8">
+        <img class="img-responsive" style="max-width:100%; height:auto;" src="~/img/charts/calinski_harabasz_score.png" />
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <p class="col-md-4">
+        Once the cluster amount had been determined we trained an final KMeans model and added the resulting cluster classifications to
+        the dataframe.  The following table describes the most common values for every column of each group.  The groups that formed
+        managed to be relatively homogeneous and distinct from each other.  They largely represented the different possible combinations
+        of the variables that were in the dataframe.
+    </p>
+    <div class="col-md-8">
+        <img class="img-responsive" style="max-width:100%; height:auto;" src="~/img/charts/cluster_traits.png" />
+    </div>
+</div>
+
+<div class="row">
+    <p class="col-md-4">
+        By plotting burial clusters against burial depth we will be able to see if there was any significant change in the characteristics
+        of burials over time as burial depth is highly correlated with the age of the burial.  At first glance it doesn't appear that there
+        is any obvious correlation, but it does look like perhapse the depth of cluster 8 is more shallow than the average depth of the other
+        clusters.
+    </p>
+    <div class="col-md-8">
+        <img class="img-responsive" style="max-width:100%; height:auto;" src="~/img/charts/cluster_depth.png" />
+    </div>
+</div>
+
+<div class="row">
+    <p class="col-md-4">
+        We ran a one-way ANOVA between depth and cluster membership to see if there was any statistically significant relationship between depth
+        and burial properties.  The results of the test were an f-statistic of 5.56 and p-value of 0.00000089.  The p-value is less than .05 so
+        it does appear that the relationship is significant but we wanted more confirmation about what that relationship was.
+    </p>
+    <div class="col-md-8">
+        <img class="img-responsive" style="max-width:100%; height:auto;" src="~/img/charts/adultsubadult_depth.png" />
+        <img class="img-responsive" style="max-width:100%; height:auto;" src="~/img/charts/bundles_depth.png" />
+    </div>
+</div>
+<div class="row">
+    <p class="col-md-4">
+        We created graphs comparing burial depth to the various components that determined the clusters in order to see if there were any patterns
+        we could spot.  By comparing each variable to burial depth we were able to notice that the deeper burials were almost never the graves of
+        children and almost never contained facebundles.  Looking back at the cluster traits chart and the graph comparing cluster membership to
+        burial depth we can see that members of cluster eight (the cluster with the most children and facebundles) were unlikely to be found in
+        the deepest burials.  It appears that the earliest graves at the burial site where not used to bury children and that facebundles were
+        perhabse a later addition to the burial process.
+    </p>
+    <div class="col-md-8">
+        <img class="img-responsive" style="max-width:100%; height:auto;" src="~/img/charts/samples_depth.png" />
+        <img class="img-responsive" style="max-width:100%; height:auto;" src="~/img/charts/wrapping_depth.png" />
+    </div>
+</div>

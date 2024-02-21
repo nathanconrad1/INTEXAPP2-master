@@ -1,0 +1,17 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Are you sure?";
+    ViewData["Subheading"] = ""; 
+    ViewData["Header"] = "Are you sure?";
+    ViewData["Img"] = "/img/Mummy.jpg";
+}
+@model Burialmain
+<h1>ARE YOU SURE YOU WANT TO DELETE @Model.Id? <i><u>THIS CANNOT BE UNDONE</u></i></h1>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input class="btn btn-secondary" type = "submit" value="Delete Permanantly" />
+    <a asp-action="BurialSummary" asp-controller="Home" class="btn btn-primary">Cancel</a>
+</form>
+
